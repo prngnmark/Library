@@ -1,3 +1,5 @@
+const body = document.querySelector(".body");
+
 const myLibrary = [
     {
         title: "dakfldsnf",
@@ -16,7 +18,7 @@ const myLibrary = [
         author: "dkfnalf",
         pages: 1000,
         read: true
-    }
+    },
 ];
 
 function Book(title, author, pages, read) {
@@ -36,3 +38,19 @@ function addBookToLibrary() {
     var read = prompt("Did you read it yet? Type 'Yes' or 'No'");
     return Book(title, author, pages, read)
 }
+
+function displayBook(myLibrary) {
+    for (i = 0; i < myLibrary.length; i++) {
+        makeBookDiv(myLibrary[i])
+    }
+}
+
+function makeBookDiv(arg) {
+    const book = document.createElement('div');
+    book.classList.add('book')
+    book.setAttribute('style', 'white-space: pre;');
+    book.textContent = `Title: ${arg.title}\r\nAuthor: ${arg.author}\r\nNumber of Pages: ${arg.pages}\r\nRead: ${arg.read}`;
+    body.appendChild(book);
+}
+
+displayBook(myLibrary)

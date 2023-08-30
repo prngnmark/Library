@@ -12,8 +12,33 @@
 <body>
     <div class="container">
         <div class="header">
-            <span class="Logo">Library</span>
-            <button>+</button>
+            <span class="logo">Library</span>
+        </div>
+        <div class="addBook">
+            <form action="#">
+                <div class="inputs">
+                    <div>
+                        <label for="title">Title</label>
+                        <input type="text" name="title" id="title" required>
+                    </div>
+                    <div>
+                        <label for="author">Author</label>
+                        <input type="text" name="author" id="author" required>
+                    </div>
+                    <div>
+                        <label for="pages">Number of pages</label>
+                        <input type="number" name="pages" id="pages" required>
+                    </div>
+                    <div>
+                        <label for="status">Have you read it?</label>
+                        <select name="status" id="status" required>
+                            <option value="read">Read</option>
+                            <option value="notRead">Not Read</option>
+                        </select>
+                    </div>
+                    <button type="submit">+ add book</button>
+                </div>
+            </form>
         </div>
         <div class="body">
 

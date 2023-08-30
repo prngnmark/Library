@@ -1,23 +1,24 @@
 const body = document.querySelector(".body");
+const submitBtn = document.querySelector(".submit");
 
 const myLibrary = [
     {
-        title: "dakfldsnf",
+        title: "dakfldsnfdafafafafd",
         author: "ndkalf",
         pages: 300,
-        read: true
+        read: "Read"
     },
     {
         title: "dkalf",
         author: "dknfal",
         pages: 200,
-        read: false
+        read: "Not Read"
     },
     {
         title: "kdfnls",
         author: "dkfnalf",
         pages: 1000,
-        read: true
+        read: "Read"
     },
 ];
 
@@ -53,4 +54,6 @@ function makeBookDiv(arg) {
     body.appendChild(book);
 }
 
-displayBook(myLibrary)
+
+
+displayBook(myLibrary);

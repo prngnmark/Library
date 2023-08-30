@@ -2,24 +2,33 @@ body {
     min-height: 100vh;
     padding: 0;
     margin: 0;
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .container {
     display: grid;
-    grid-template-rows: 1fr 6fr;
+    grid-template-rows: 1fr 1fr 5fr;
     min-height: 100vh;
     width: 100vw;
 }
 
 .header {
-    background-color: white;
+    background-color: #1d3557;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    color: #f1faee;
+}
+
+.addBook {
+    background-color: #457b9d;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
 .body {
-    background-color: #F0EEF1;
+    background-color: #457b9d;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -29,16 +38,41 @@ body {
 .book {
     height: 200px;
     width: 300px;
-    background-color: white;
+    background-color: #f1faee;
     border: 2px solid black;
     font-size: 18px;
+    display: flex;
+    align-items: center;
+    box-shadow: 10px 5px 5px #1d3557;
+    padding: 25px;
+}
+
+.inputs {
+    display: flex;
+}
+
+.logo {
+    padding-left: 25px;
+    font-size: 50px;
+}
+
+label {
+    display: flex;
+    color: #e0e1dd;
+    border-radius: 5px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
 }
 
 button {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    font-size: 25px;
-    background-color: white;
-    border: 2px solid black;
+    background: none;
+    border: none;
+    color: #f1faee;
+    font-size: 24px;
+}
+
+button:hover {
+    background-color: #f1faee;
+    color: #457b9d;
 }

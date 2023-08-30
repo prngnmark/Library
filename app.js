@@ -1,5 +1,10 @@
 const body = document.querySelector(".body");
 const submitBtn = document.querySelector(".submit");
+const titleInput = document.querySelector("#title");
+const authorInput = document.querySelector("#author");
+const pagesInput = document.querySelector("#pages");
+const statusInput = document.querySelector("#status");
+const form = document.querySelector("#form");
 
 const myLibrary = [
     {
@@ -27,17 +32,12 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
-    this.info() = function () {
-        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`
-    }
 }
 
 function addBookToLibrary() {
-    var title = prompt("Enter book title");
-    var author = prompt("Enter book author");
-    var pages = prompt("Enter number of pages the book has");
-    var read = prompt("Did you read it yet? Type 'Yes' or 'No'");
-    return Book(title, author, pages, read)
+    const newBook = new Book(titleInput.value, authorInput.value, pagesInput.value, statusInput.value);
+    myLibrary.push(newBook);
+    makeBookDiv(newBook);
 }
 
 function displayBook(myLibrary) {
@@ -54,6 +54,11 @@ function makeBookDiv(arg) {
     body.appendChild(book);
 }
 
-
+submitBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (form.checkValidity() == true) {
+        addBookToLibrary()
+    }
+})
 
 displayBook(myLibrary);

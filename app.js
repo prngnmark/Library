@@ -5,27 +5,9 @@ const authorInput = document.querySelector("#author");
 const pagesInput = document.querySelector("#pages");
 const statusInput = document.querySelector("#status");
 const form = document.querySelector("#form");
+const removeBtn = document.querySelector(".remove");
 
-const myLibrary = [
-    {
-        title: "dakfldsnfdafafafafd",
-        author: "ndkalf",
-        pages: 300,
-        read: "Read"
-    },
-    {
-        title: "dkalf",
-        author: "dknfal",
-        pages: 200,
-        read: "Not Read"
-    },
-    {
-        title: "kdfnls",
-        author: "dkfnalf",
-        pages: 1000,
-        read: "Read"
-    },
-];
+const myLibrary = [];
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -48,16 +30,32 @@ function displayBook(myLibrary) {
 
 function makeBookDiv(arg) {
     const book = document.createElement('div');
-    book.classList.add('book')
+    book.classList.add('book');
     book.setAttribute('style', 'white-space: pre;');
-    book.textContent = `Title: ${arg.title}\r\nAuthor: ${arg.author}\r\nNumber of Pages: ${arg.pages}\r\nRead: ${arg.read}`;
+    book.dataset.index = myLibrary.length - 1;
     body.appendChild(book);
+    const bookInfo = document.createElement('div');
+    bookInfo.classList.add('bookInfo');
+    book.appendChild(bookInfo)
+    bookInfo.textContent = `Title: ${arg.title}\r\nAuthor: ${arg.author}\r\nNumber of Pages: ${arg.pages}\r\nRead: ${arg.read}`;
+    const btnDiv = document.createElement('div');
+    btnDiv.classList.add('btnDiv');
+    book.appendChild(btnDiv);
+    const remove = document.createElement('button');
+    remove.classList.add('remove');
+    remove.innerText = "- remove book";
+    remove.addEventListener('click', () => {
+        book.remove();
+        myLibrary.splice(book.dataset.index, 1)
+    })
+    btnDiv.appendChild(remove);
 }
 
 submitBtn.addEventListener('click', (event) => {
     event.preventDefault();
     if (form.checkValidity() == true) {
-        addBookToLibrary()
+        addBookToLibrary();
+        form.reset()
     }
 })
 

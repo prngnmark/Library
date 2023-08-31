@@ -42,13 +42,23 @@ body {
     border: 2px solid black;
     font-size: 18px;
     display: flex;
-    align-items: center;
     box-shadow: 10px 5px 5px #1d3557;
     padding: 25px;
+    flex-direction: column;
+}
+
+.btnDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .inputs {
     display: flex;
+}
+
+input:focus {
+    border: 2px solid #a8dadc;
 }
 
 .logo {
@@ -65,14 +75,22 @@ label {
     margin-bottom: 5px;
 }
 
-button {
+.submit {
     background: none;
     border: none;
     color: #f1faee;
     font-size: 24px;
 }
 
-button:hover {
+.submit:hover {
     background-color: #f1faee;
     color: #457b9d;
+    cursor: pointer;
+}
+
+.remove {
+    background-color: #1d3557;
+    color: #f1faee;
+    padding: 10px 20px;
+    border-radius: 25px;
 }

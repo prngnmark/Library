@@ -49,7 +49,6 @@ body {
 
 .btnDiv {
     display: flex;
-    flex-direction: column;
     align-items: center;
 }
 
@@ -88,9 +87,9 @@ label {
     cursor: pointer;
 }
 
-.remove {
+.remove,
+.change {
     background-color: #1d3557;
     color: #f1faee;
     padding: 10px 20px;
-    border-radius: 25px;
 }
